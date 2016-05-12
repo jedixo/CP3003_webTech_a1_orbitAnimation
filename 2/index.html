@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Paper.js version</title>
+    <script type="text/javascript" src="fabric.js"></script>
+
+</head>
+<body>
+    <canvas id="canvas" resize hidpi="off"></canvas>
+	
+	<script type="text/javascript" >    
+	(function() {
+	fabric.Object.prototype.originX = fabric.Object.prototype.OriginY = 'center';
+	
+	//get canvas
+	var canvas = this.__canvas = new fabric.Canvas('canvas', {
+	hoverCursor: 'pointer',
+	selection: false,
+	perPixelTargetFind: true,
+	targetFindTolerance: 5
+	});
+	
+	//resize listener
+	window.addEventListener('resize', resizeCanvas, false);
+	function resizeCanvas() {
+		canvas.setHeight(window.innerHeight);
+		canvas.setWidth(window.innerWidth);
+		canvas.renderAll();
+	}
+	resizeCanvas();
+	
+	//var circle = new fabric.Circle({
+	//radius: 30,
+	//fill: 'blue'});
+	//canvas.add(circle);
+	//circle.center();
+	
+	var planetSize = 25,
+		totalPlanets = 5,
+		rotationSpeed = 40000,
+		orbits = [ ],
+		planets = [ ];
+		
+	var limitCircle = new fabric.Circle({
+		radius: 250,
+		stroke: 'rgb(192,192,192)',
+		strokeWidth: 3
+	});
+	
+	})();
+	
+	</script>
+</body>
+</html>

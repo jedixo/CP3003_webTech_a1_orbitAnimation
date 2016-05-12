@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Paper.js version</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="JS/paper-full.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+	var path = new Path.Circle({
+	center: view.center,
+	radius: 30,
+	strokeColor: 'white'
+	});
+
+// Create a copy of the path and set its stroke color to red:
+	var copy = path.clone();
+	copy.strokeColor = 'blue';
+	copy.fillColor = "blue";
+
+// Save the bottom left position of the path's bounding box:
+	var point = copy.bounds.topLeft;
+	//var angle = 360 / 30;
+	//var i = 1;
+	function onFrame(event) {
+	
+
+	
+	copy.rotate(3, point);
+	
+	}
+    </script>
+</head>
+<body>
+    <canvas id="canvas" resize hidpi="off"></canvas>
+</body>
+</html>
